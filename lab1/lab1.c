@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int main() {
+  char *line = NULL;
+  size_t line_len = 0;
+  ssize_t wline = getline(&line, &line_len, stdin);
+
+  char *saveptr;
+  char *ret = strtok_r(line, " ", &saveptr);
+  while (ret != NULL) {
+    printf("%s \n", ret);
+    char *ret2 = strtok_r(NULL, " ", &saveptr);
+    printf("%s \n", ret2);
+  }
+
+  printf("here\n");
+  free(line);
+  return 0;
+}

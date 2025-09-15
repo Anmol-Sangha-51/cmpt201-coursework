@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+  FILE *stream;
+  char *line = NULL;
+  size_t line_len = 0;
+  size_t wline;
+
+  printf("here\n");
+  while((wline = getline(&line, &line_len, stream)) != -1){
+  printf("Type Somthing: ");
+  }
+  return 0;
+}
